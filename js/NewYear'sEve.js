@@ -12,82 +12,53 @@ const nowTime = document.getElementById("nowTime");
 const now = new Date();
 let targetTime = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
 
-/**
- * 花火を表すクラス
- * @class
- */
 class Firework {
-    /**
-     * @constructor
-     * @param {number} x - 花火の初期X座標
-     * @param {number} y - 花火の初期Y座標
-     * @param {number} targetY - 花火が爆発するY座標
-     * @param {string} color - 花火の色
-     */
-    constructor(x, y, targetY, color) {}
+    constructor(x, y, targetY, color) {
+        this.x = x;
+        this.y = y;
+        this.targetY = targetY;
+        this.color = color;
+        this.radius = 3;
+        this.speed = 2;
+        this.exploded = false;
+        this.particles = [];
+    }
 
-    /**
-     * 花火の状態を更新するメソッド
-     * @method
-     */
-    update() {}
-
-    /**
-     * 花火を描画するメソッド
-     * @method
-     */
-    draw() {}
-
-    /**
-     * 花火が爆発した際に生成される粒子を作成するメソッド
-     * @method
-     */
-    createParticles() {
-                this.x = x;
-                this.y = y;
-                this.targetY = targetY;
-                this.color = color;
-                this.radius = 3;
-                this.speed = 2;
-                this.exploded = false;
-                this.particles = [];
-                }
-
-                update() {
-                if (!this.exploded) {
-                    this.y -= this.speed;
-                    if (this.y <= this.targetY) {
-                    this.exploded = true;
-                    this.createParticles();
-                    }
-                } else {
-                    this.particles.forEach(particle => particle.update());
-                }
-                }
-
-                draw() {
-                if (!this.exploded) {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    ctx.closePath();
-                } else {
-                    this.particles.forEach(particle => particle.draw());
-                }
-                }
-
-                createParticles() {
-                const particleCount = 50;
-                for (let i = 0; i < particleCount; i++) {
-                    const angle = (Math.PI * 2 * i) / particleCount;
-                    const speed = Math.random() * 3 + 2;
-                    const vx = Math.cos(angle) * speed;
-                    const vy = Math.sin(angle) * speed;
-                    this.particles.push(new Particle(this.x, this.y, vx, vy, this.color));
-                }
-                }
+    update() {
+        if (!this.exploded) {
+            this.y -= this.speed;
+            if (this.y <= this.targetY) {
+                this.exploded = true;
+                this.createParticles();
             }
+        } else {
+            this.particles.forEach(particle => particle.update());
+        }
+    }
+
+    draw() {
+        if (!this.exploded) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        } else {
+            this.particles.forEach(particle => particle.draw());
+        }
+    }
+
+    createParticles() {
+        const particleCount = 50;
+        for (let i = 0; i < particleCount; i++) {
+            const angle = (Math.PI * 2 * i) / particleCount;
+            const speed = Math.random() * 3 + 2;
+            const vx = Math.cos(angle) * speed;
+            const vy = Math.sin(angle) * speed;
+            this.particles.push(new Particle(this.x, this.y, vx, vy, this.color));
+        }
+    }
+}
 
 class Particle {
     constructor(x, y, vx, vy, color) {
@@ -178,7 +149,6 @@ function showHappyNewYear() {
 
 function launchFireworksAtMidnight() {
     console.log("Happy New Year!");
-    //console.log("今年もよろしくお願いします。");
     for (let i = 0; i < 100; i++) {
         setTimeout(() => {
             launchFirework();
