@@ -1,11 +1,8 @@
 body {
     margin: 0;
     background: black;
-    overflow: hidden;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
     color: white;
     font-family: Arial, sans-serif;
@@ -15,19 +12,19 @@ canvas {
 }
 
 #nowTime {
-    font-size: 3rem;
+    font-size: 50px;
     margin-top: 200px; /* 位置を下げる */
     color: #ffffee;
 }
 
 #countdown {
-    font-size: 3rem;
+    font-size: 40px;
     margin-top: 200px; /* 位置を下げる */
     color: #ffffee;
 }
 
 #happyNewYear {
-    font-size: 3rem;
+    font-size: 70px;
     color: #fc0;
     display: none; /* 初期は非表示 */
     position: absolute; /* 絶対位置 */
