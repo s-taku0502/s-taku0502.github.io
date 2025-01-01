@@ -125,7 +125,11 @@ function updateCountdown() {
         diff = targetTime - now;
     }
 
-    nowTime.style.display = "block";
+    //nowTime.style.display = "block";
+    nowYear = now.getFullYear();
+    nowMonth = now.getMonth();
+    nowDate = now.getDate();
+    nowHour = now.getHours();
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -135,10 +139,17 @@ function updateCountdown() {
     nowTime.textContent = `${now.getFullYear()}年${String(now.getMonth() + 1).padStart(2, '0')}月${String(now.getDate()).padStart(2, '0')}日${String(now.getHours()).padStart(2, '0')}時${String(now.getMinutes()).padStart(2, '0')}分${String(now.getSeconds()).padStart(2, '0')}秒`;
     countdownTimer.textContent = `${nextYear}年まで: ${String(hours).padStart(2, '0')}時間${String(minutes).padStart(2, '0')}分${String(seconds).padStart(2, '0')}秒`;
 
-    if (diff <= 0) {
+    if (nowMonth === 0 && 0 <= nowDate && nowDate <= 3) {
         countdownTimer.style.display = "none";
+        nowTime.style.display = "block";
         showHappyNewYear();
         launchFireworksAtMidnight();
+    }else{
+        nowTime.textContent = `${now.getFullYear()}年${String(now.getMonth() + 1).padStart(2, '0')}月${String(now.getDate()).padStart(2, '0')}日${String(now.getHours()).padStart(2, '0')}時${String(now.getMinutes()).padStart(2, '0')}分${String(now.getSeconds()).padStart(2, '0')}秒`;
+        countdownTimer.style.display = "block";
+        nowTime.style.display = "block";
+        happyNewYear.style.display = "none";
+        goodLuck.style.display = "none";
     }
 }
 
