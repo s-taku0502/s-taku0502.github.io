@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+canvas {
+    display: block;
+}
+
+#nowTime {
+    font-size: 3rem;
+    margin-top: 200px; /* 位置を下げる */
+    color: #ffffee;
+}
+
+#countdown {
+    font-size: 3rem;
+    margin-top: 200px; /* 位置を下げる */
+    color: #ffffee;
+}
+
+#happyNewYear {
+    font-size: 3rem;
+    color: #fc0;
+    display: none; /* 初期は非表示 */
+    position: absolute; /* 絶対位置 */
+    top: 50%; /* 画面の中央 */
+    transform: translateY(-50%); /* 垂直方向の中央に配置 */
+}
+
+#GoodLuck {
+    font-size: 2rem;
+    color: #fa2;
+    display: none; /* 初期は非表示 */
+    position: absolute; /* 絶対位置 */
+    top: 50%; /* 画面の中央 */
+    transform: translateY(+50%); /* 垂直方向の中央に配置 */
+}
