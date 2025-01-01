@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 body {
     margin: 0;
     background: black;
@@ -13,13 +17,13 @@ canvas {
 
 #nowTime {
     font-size: 50px;
-    margin-top: 200px; /* 位置を下げる */
+    margin-top: auto; /* 位置を下げる */
     color: #ffffee;
 }
 
 #countdown {
     font-size: 40px;
-    margin-top: 200px; /* 位置を下げる */
+    margin-top: auto; /* 位置を下げる */
     color: #ffffee;
 }
 
@@ -29,14 +33,14 @@ canvas {
     display: none; /* 初期は非表示 */
     position: absolute; /* 絶対位置 */
     top: 50%; /* 画面の中央 */
-    transform: translateY(-50%); /* 垂直方向の中央に配置 */
+    /*transform: translateY(-50%); /* 垂直方向の中央に配置 */
 }
 
 #GoodLuck {
-    font-size: 2rem;
+    font-size: 50px;
     color: #fa2;
     display: none; /* 初期は非表示 */
     position: absolute; /* 絶対位置 */
     top: 50%; /* 画面の中央 */
-    transform: translateY(+50%); /* 垂直方向の中央に配置 */
+    /*transform: translateY(+50%); /* 垂直方向の中央に配置 */
 }

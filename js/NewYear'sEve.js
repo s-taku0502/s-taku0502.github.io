@@ -178,7 +178,7 @@ function showHappyNewYear() {
 
 function launchFireworksAtMidnight() {
     console.log("Happy New Year!");
-    console.log("今年もよろしくお願いします。");
+    //console.log("今年もよろしくお願いします。");
     for (let i = 0; i < 100; i++) {
         setTimeout(() => {
             launchFirework();
