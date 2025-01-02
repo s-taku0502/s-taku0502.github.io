@@ -159,7 +159,7 @@ function showHappyNewYear() {
 }
 
 function launchFireworksAtMidnight() {
-    console.log("Happy New Year!");
+    //console.log("Happy New Year!");
     for (let i = 0; i < 100; i++) {
         setTimeout(() => {
             launchFirework();
