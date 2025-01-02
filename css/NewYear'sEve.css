@@ -31,6 +31,10 @@ canvas {
     font-size: 70px;
     color: #fc0;
     display: none; /* 初期は非表示 */
+<<<<<<< HEAD
+=======
+    /*position: absolute; /* 絶対位置 */
+>>>>>>> 7124bb0c636662f806269a8175abfc5956195dc6
     top: 50%; /* 画面の中央 */
     /*transform: translateY(-50%); /* 垂直方向の中央に配置 */
 }
