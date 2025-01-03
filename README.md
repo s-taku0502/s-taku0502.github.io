@@ -8,7 +8,8 @@
 
 # 制作ページ
 　./NewYear'sEve.html ← 自分の中で分かりやすかったのでこちらに変更<br>
-　./1231.html ← ./NewYear'sEve.html にリダイレクトするように編集
+　./1231.html ← ./NewYear'sEve.html にリダイレクトするように編集<br>
+　[https://s-taku0502.github.io/.1231.html](https://s-taku0502.github.io/1231.html) 
 
 ## NewYear'sEve.html について
 　内容は秘密です。実際に大晦日までお待ちください。<br>
