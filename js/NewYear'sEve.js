@@ -137,7 +137,8 @@ function updateCountdown() {
     const nextYear = targetTime.getFullYear();
 
     nowTime.textContent = `${now.getFullYear()}年${String(now.getMonth() + 1).padStart(2, '0')}月${String(now.getDate()).padStart(2, '0')}日${String(now.getHours()).padStart(2, '0')}時${String(now.getMinutes()).padStart(2, '0')}分${String(now.getSeconds()).padStart(2, '0')}秒`;
-    countdownTimer.textContent = `${nextYear}年まで: ${String(hours).padStart(2, '0')}時間${String(minutes).padStart(2, '0')}分${String(seconds).padStart(2, '0')}秒`;
+    countdownTimer.textContent = `${nextYear}年まで\nあと
+     ${String(Math.floor(hours / 24)).padStart(2, '0')}日${String(hours%24).padStart(2, '0')}時間${String(minutes).padStart(2, '0')}分${String(seconds).padStart(2, '0')}秒`;
 
     if (nowMonth === 0 && 0 <= nowDate && nowDate <= 3) {
         countdownTimer.style.display = "none";
